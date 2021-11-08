@@ -2,24 +2,20 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import thunk from 'redux-thunk'
 
-import { AppState } from '../type/type'
+import { UserState } from '../type/type'
 import createRootReducer from './reducers'
 import rootSaga from './sagas'
 
-const initState: AppState = localStorage.getItem('state')
-  ? JSON.parse(localStorage.getItem('state')!)
-  : {
-    products: {
-      allProducts: [],
-      inCart: [],
-    },
-    counter: {
-      count: 0,
-      totalPrice: 0,
-    },
-    orders: {
-      orders: [],
-    },
+const initState: UserState = {
+    profile:{
+		first_name: '',
+		last_name: '',
+		address: '',
+		age: 0,
+		user_name: '',
+		password: '',
+	},
+	submitted: false
   }
 
 export default function makeStore(initialState = initState) {
