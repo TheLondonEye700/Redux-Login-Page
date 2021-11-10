@@ -6,20 +6,19 @@ import { AppState } from '../type/type'
 import createRootReducer from './reducers'
 import rootSaga from './sagas'
 
-const initState: AppState = {
-  users: {
-    profile: {
-      first_name: '',
-      last_name: '',
-      address: '',
-      age: 0,
-      user_name: '',
-      password: '',
-    },
-    submitted: false
+const initState: AppState =  window.localStorage.getItem('user') ? 
+  JSON.parse(window.localStorage.getItem('user')!) :
+  {
+    users: {
+	  profile: [],
+	  currentProfile: {
+		  name: '',
+		  address: '',
+		  user_name: '',
+		  password: '',
+	  }
+    }
   }
-  
-}
 
 export default function makeStore(initialState = initState) {
   const sagaMiddleware = createSagaMiddleware()
@@ -34,7 +33,7 @@ export default function makeStore(initialState = initState) {
 
   const store = createStore(
     createRootReducer(),
-    initialState,
+    initialState as any,
     composeEnhancers(applyMiddleware(...middlewares))
   )
 

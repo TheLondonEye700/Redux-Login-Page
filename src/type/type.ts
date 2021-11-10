@@ -3,17 +3,15 @@ export const REGISTER = "REGISTER"
 export const SUBMIT_STATUS = "SUBMIT_STATUS"
 
 export type User = {
-	first_name: string,
-	last_name: string,
+	name: string,
 	address: string,
-	age: number,
 	user_name: string,
 	password: string,
 }
 
 export type UserState = {
-	profile: User,
-	submitted: boolean
+	profile: User[],
+	currentProfile: User
 }
 
 export type LoginAction = {

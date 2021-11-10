@@ -1,13 +1,15 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import Home from './page/Home'
-import ProductCard from './page/ProductCard'
+import Login from './pages/Login'
+import User from './pages/User'
+import Registration from './pages/Registration'
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/products/:id" component={ProductCard} />
+    <Route exact path="/" component={Login} />
+    <Route exact path="/register" component={Registration} />
+    <Route exact path="/user" component={User} />
   </Switch>
 )
 
