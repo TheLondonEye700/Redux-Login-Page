@@ -1,7 +1,7 @@
 import { UserAction, UserState, LOGIN, REGISTER, SUBMIT_STATUS } from "../../type/type";
 
 const initialState: UserState = {
-  profile:{
+  profile: {
     first_name: '',
     last_name: '',
     address: '',
@@ -12,13 +12,14 @@ const initialState: UserState = {
   submitted: false
 }
 
-export function users(state = initialState, action: UserAction){
+export default function users(state = initialState, action: UserAction){
   switch (action.type) {
   case LOGIN:
     return {
       profile: action.payload.user,
 	  submitted: false,
     }
+
   case REGISTER:
     return {
       profile: action.payload.user,
@@ -27,7 +28,7 @@ export function users(state = initialState, action: UserAction){
 	
   case SUBMIT_STATUS:
     return {
-      ... state, 
+      ...state, 
 	  submitted: false,
     }
 	

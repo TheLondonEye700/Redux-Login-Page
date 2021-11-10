@@ -35,3 +35,7 @@ export type ChangeSubmitStatus = {
 }
 
 export type UserAction = LoginAction | RegisterAction | ChangeSubmitStatus
+
+export type AppState = {
+	users: UserState
+}

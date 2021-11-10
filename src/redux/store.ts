@@ -2,21 +2,24 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import thunk from 'redux-thunk'
 
-import { UserState } from '../type/type'
+import { AppState } from '../type/type'
 import createRootReducer from './reducers'
 import rootSaga from './sagas'
 
-const initState: UserState = {
-    profile:{
-		first_name: '',
-		last_name: '',
-		address: '',
-		age: 0,
-		user_name: '',
-		password: '',
-	},
-	submitted: false
+const initState: AppState = {
+  users: {
+    profile: {
+      first_name: '',
+      last_name: '',
+      address: '',
+      age: 0,
+      user_name: '',
+      password: '',
+    },
+    submitted: false
   }
+  
+}
 
 export default function makeStore(initialState = initState) {
   const sagaMiddleware = createSagaMiddleware()
