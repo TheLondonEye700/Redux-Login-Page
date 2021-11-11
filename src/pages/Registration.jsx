@@ -1,12 +1,11 @@
 import React, { useRef } from 'react'
 import { useDispatch } from 'react-redux'
-import { TextField, Button, Link } from '@mui/material'
+import { TextField, Button, Link, FormControl } from '@mui/material'
 import { useHistory } from "react-router-dom";
 
 import {registerUser} from '../redux/actions/user'
 
 export default function Registration (){
-
   const userName = useRef(null)
   const pass = useRef(null)
   const name = useRef(null)
@@ -27,13 +26,13 @@ export default function Registration (){
   }
 
   return (
-    <div>
+    <FormControl>
       <TextField label="Name" variant="outlined" inputRef={name} />
       <TextField label="Address" variant="outlined" inputRef={address} />
       <TextField label="User name" variant="outlined" inputRef={userName} />
       <TextField label="Password" variant="outlined" inputRef={pass} />
       <Button onClick={submitHandler}>Register</Button>
 	  <Link href="/">Login</Link>
-    </div>
+    </FormControl>
   )
 }

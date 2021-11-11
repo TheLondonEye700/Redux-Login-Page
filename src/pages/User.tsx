@@ -1,15 +1,19 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Typography, Box } from '@mui/material'
 
 import { AppState } from '../type/type'
+
+const style = {m: 5}
 
 export default function User (){
   const user = useSelector((state: AppState)=> state.users.currentProfile)
 
   return (
-    <div>
-      <p>{`First name: ${user.name}`}</p>
-      <p>{`Address: ${user.address}`}</p>
-    </div>
+    <Box sx={style}>
+      <Typography variant="h5">Welcome!</Typography>
+      <Typography>{`First name: ${user.name}`}</Typography>
+      <Typography>{`Address: ${user.address}`}</Typography>
+    </Box>
   )
 }

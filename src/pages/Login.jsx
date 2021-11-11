@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { TextField, Button, Link } from '@mui/material'
+import { TextField, Button, Link, FormControl } from '@mui/material'
 import { useHistory } from "react-router-dom";
 
 import {loginUser} from '../redux/actions/user'
@@ -35,12 +35,12 @@ export default function Login (){
   }
 
   return (
-    <div>
+    <FormControl>
       <TextField label="User name" variant="outlined" inputRef={userName}/>
       <TextField label="Password" variant="outlined" inputRef={pass} />
       <Button onClick={submitHandler}>Login</Button>
 
 	  <Link href="/register">Register</Link>
-    </div>
+    </FormControl>
   )
 }
