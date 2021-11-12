@@ -16,16 +16,13 @@ export default function Login (){
   const submitHandler = (e) => {
     userName.current= userName.current.value
     pass.current = pass.current.value
-    
-    console.log(user)
     let i
-	  for (i = 0; i < user.profile.length; i++){
-		  console.log()
+    for (i = 0; i < user.profile.length; i++){
 		  if(user.profile[i].user_name === userName.current && user.profile[i].password === pass.current){
           		dispatch(loginUser(user.profile[i]))
           		break
 		  }
-	  }
+    }
 	 if (i === user.profile.length){
       alert("Wrong user name or password")
 	 } else{

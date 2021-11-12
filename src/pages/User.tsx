@@ -11,7 +11,7 @@ export default function User (){
 
   return (
     <Box sx={style}>
-      <Typography variant="h5">Welcome!</Typography>
+      <Typography variant="h5">{`Welcome user ${user.user_name}`} </Typography>
       <Typography>{`First name: ${user.name}`}</Typography>
       <Typography>{`Address: ${user.address}`}</Typography>
     </Box>

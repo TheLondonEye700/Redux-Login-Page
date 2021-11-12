@@ -33,7 +33,7 @@ export default function makeStore(initialState = initState) {
 
   const store = createStore(
     createRootReducer(),
-    initialState as any,
+    initialState,
     composeEnhancers(applyMiddleware(...middlewares))
   )
 
