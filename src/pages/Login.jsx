@@ -27,7 +27,6 @@ export default function Login (){
       alert("Wrong user name or password")
 	 } else{
       history.push("/user")
-
 	 }
   }
 

@@ -1,4 +1,4 @@
-import { UserAction, UserState, LOGIN, REGISTER } from "../../type/type";
+import { UserAction, UserState, LOGIN, REGISTER, LOGOUT } from "../../type/type";
 
 const initialState: UserState = {
   profile: [],
@@ -24,6 +24,18 @@ export default function users(state = initialState, action: UserAction){
       ...state,
       profile: [...state.profile, action.payload.user]
     }
+  
+  case LOGOUT:
+    const new_current = {
+      name: '',
+      address: '',
+      user_name: '',
+      password: '',
+    }
+	  return {
+      ...state,
+		  currentProfile: new_current
+	  }
 	
   default:
     return state;

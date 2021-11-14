@@ -1,4 +1,5 @@
 export const LOGIN = "LOGIN"
+export const LOGOUT = "LOGOUT"
 export const REGISTER = "REGISTER"
 export const SUBMIT_STATUS = "SUBMIT_STATUS"
 
@@ -20,6 +21,12 @@ export type LoginAction = {
 		user: User
 	}
 }
+export type LogoutAction = {
+	type: typeof LOGOUT,
+	payload: {
+		user: User
+	}
+}
 
 export type RegisterAction = {
 	type: typeof REGISTER,
@@ -32,7 +39,7 @@ export type ChangeSubmitStatus = {
 	type: typeof SUBMIT_STATUS
 }
 
-export type UserAction = LoginAction | RegisterAction | ChangeSubmitStatus
+export type UserAction = LoginAction | RegisterAction | ChangeSubmitStatus | LogoutAction
 
 export type AppState = {
 	users: UserState
