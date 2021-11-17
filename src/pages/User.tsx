@@ -12,7 +12,6 @@ export default function User (){
   const dispatch = useDispatch()
 
   const logOut = (e?:any) => {
-    // window.localStorage.removeItem()
     dispatch(logoutUser(user))
   }
 
