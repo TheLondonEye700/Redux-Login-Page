@@ -31,8 +31,13 @@ export default function Login (){
 	 }
   }
 
-  const responseGoogle = (response) => {
+  const responseGoogle = async(response) => {
     console.log(response)
+	let res = await axios.post('http://localhost:5000/api/v1/users/google-authenticate', {
+		{id_token: response.tokenObj.id_token}
+	})
+
+	console.log(res)
   }
 
   return (
