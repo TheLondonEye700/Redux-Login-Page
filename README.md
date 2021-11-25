@@ -1,5 +1,14 @@
 # React Login and Sign up
-This project was built to practice TypeScript & Redux .
+This project was built to practice TypeScript & Redux.
+
+## Features
+* Login page
+* Sign up page
+* Log out
+* Display user information
+* Connect to BackEnd to get user shopping information
+
+The user information is stored in local storage.
 
 ## Installation
 You should use either `npm` or `yarn` but not both. It's recommeded to use `yarn`
@@ -13,11 +22,3 @@ The template comes with ready-made code for a very simple working demo (products
 ```
 yarn start
 ```
-
-## Features
-* Login page
-* Sign up page
-* Log out
-* Display user information
-
-The user information is stored in local storage.
