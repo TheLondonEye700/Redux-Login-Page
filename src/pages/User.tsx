@@ -7,6 +7,7 @@ import { logoutUser } from '../redux/actions/user'
 
 const style = {m: 5}
 
+
 export default function User (){
   const user = useSelector((state: AppState)=> state.users.currentProfile)
   const dispatch = useDispatch()
@@ -24,3 +25,4 @@ export default function User (){
     </Box>
   )
 }
+
